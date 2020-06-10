@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun  8 22:55:48 2020
-
-@author: yifan
-"""
+#%% Import necessary packages
 
 import numpy as np
 import matplotlib
@@ -12,6 +7,7 @@ from sklearn.datasets import fetch_california_housing
 from sklearn import linear_model 
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import KFold, cross_validate, LeaveOneOut, train_test_split
 
 matplotlib.rcParams['font.size'] = 20
 matplotlib.rcParams['axes.linewidth'] = 1.5
@@ -72,9 +68,8 @@ X = Xs.copy()
 y = y_full.copy()
 
 
-# Split the data into train/test split of 80/20 ratio
+#%% Split the data into train/test split of 80/20 ratio
 # 10 fold cross validation
-from sklearn.model_selection import KFold, cross_validate, LeaveOneOut, train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 # check train and test set sizes
@@ -89,6 +84,16 @@ loo = LeaveOneOut()
 
 #%% helper functions
 def prepare_poly_features(X, degree):
+    """generate polynomial features
+
+    :param X: original feature matrix
+    :type X: np array
+    :param degree: the degree of polynomial features
+    :type degree: int
+    :return: polynomial feature matrix
+    :rtype: np array
+    """
+ 
     
     X_poly = X.copy() # make a copy
     # 2D array is required, append a new axis if X is 1D
@@ -100,18 +105,35 @@ def prepare_poly_features(X, degree):
     return X_poly
 
 def linear_regression(X, y):
-    '''
-    # Create linear regression object
-    '''
+    """Create linear regression object
+
+    :param X: feature matrix
+    :type X: 2D np array
+    :param y: response 
+    :type y: 1D np array
+    :return: regression model
+    :rtype: sklearn object
+    """   
     model = linear_model.LinearRegression(fit_intercept = True)
     model.fit(X, y)
     
     return model
     
 def cross_validation(X, y, model, cv_method): 
-    '''
-    Cross-validation
-    '''
+    """Cross-validation
+
+    :param X: feature matrix
+    :type X: 2D np array
+    :param y: response
+    :type y: 1D np array
+    :param model: regression model
+    :type model: sklearn object
+    :param cv_method: cross validation method
+    :type cv_method: cv object
+    :return: mean cv error  
+    :rtype: float
+    """    
+
     scores  = cross_validate(model, X, y, cv = cv_method,
                                 scoring=('neg_mean_squared_error'),
                                 return_train_score=True)
