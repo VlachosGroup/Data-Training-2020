@@ -188,7 +188,7 @@ ax.legend()
 
 
 #%% Model 1
-#  A single feature, degree = 1
+#  A single feature, degree = 2
 # generate polynomial features for both training and test set
 X_poly_train_1 = prepare_poly_features(X_train[:, 0], degree =2)
 X_poly_test_1 = prepare_poly_features(X_test[:,0], degree = 2)
