@@ -6,7 +6,7 @@
 - Yifan Wang (wangyf@udel.edu)
 - Xue Zong (xzong@udel.edu)
 
-### Proposed Outline of Data Science Training Sessions:
+### Session Outline:
 
 Introductory Session
 - Provide an overview of flowchart and methods on it
