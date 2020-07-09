@@ -37,6 +37,10 @@ Model Usage 1:
 
 Final Session: We would hold one more session to review the flowchart and answer specific questions our group has for their problems to encourage implementation.
 
+![flowchart](flowchart.svg)
+
+
+
 ## Dependencies
 - [Numpy](https://numpy.org/): Used for vector and matrix operations
 - [Matplotlib](https://matplotlib.org/): Used for plotting
