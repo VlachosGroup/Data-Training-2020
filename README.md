@@ -33,7 +33,7 @@ Data Driven Modeling 3:
 
 Model Usage 1:
 - Model comparison and obtaining predictions
-- Model optimization: BO
+- Model optimization: Bayesian Optimization
 
 Final Session: We would hold one more session to review the flowchart and answer specific questions our group has for their problems to encourage implementation.
 
