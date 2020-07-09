@@ -5,3 +5,4 @@ scipy
 sklearn
 seaborn
 xlrd>=1.0.0
+openpyxl
