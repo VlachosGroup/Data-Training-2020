@@ -2,5 +2,5 @@ numpy==1.16.*
 matplotlib==3.*
 pandas
 scipy
-sklearn == 0.22.*
+sklearn == 0.23.0
 seaborn
