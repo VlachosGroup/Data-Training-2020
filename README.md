@@ -1,5 +1,8 @@
 # Data Training 2020 in Vlachos Group
 
+Click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/VlachosGroup/Data-Training-2020/master) to play with the interactive notebooks on your browser
+
+
 ### Authors
 - Himaghna Bhattacharjee (himaghna@udel.edu)
 - Maximilian Cohen (maxrc@udel.edu)
